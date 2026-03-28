@@ -1,0 +1,38 @@
+{
+  "project_name": "Restaurant Hardcore Labyrinth",
+  "map_name": "restaurant_fidel.world",
+  "start_position": {
+    "description": "Tout au fond du labyrinthe de la cuisine",
+    "x": 19.0,
+    "y": 9.0,
+    "z": 0.0,
+    "yaw": 3.14
+  },
+  "tables": [
+    {
+      "id": "table_salle_1",
+      "type": "cafe_table",
+      "delivery_point": { "x": 3.0, "y": 4.0, "z": 0.0, "yaw": -1.57, "description": "Haut table 1" }
+    },
+    {
+      "id": "table_salle_2",
+      "type": "cafe_table",
+      "delivery_point": { "x": 7.0, "y": 4.0, "z": 0.0, "yaw": -1.57, "description": "Haut table 2" }
+    },
+    {
+      "id": "table_salle_3",
+      "type": "cafe_table",
+      "delivery_point": { "x": 11.0, "y": 4.0, "z": 0.0, "yaw": -1.57, "description": "Haut table 3" }
+    },
+    {
+      "id": "table_salle_4",
+      "type": "cafe_table",
+      "delivery_point": { "x": 15.0, "y": 4.0, "z": 0.0, "yaw": -1.57, "description": "Haut table 4" }
+    },
+    {
+      "id": "table_salle_5",
+      "type": "cafe_table",
+      "delivery_point": { "x": 18.0, "y": 4.0, "z": 0.0, "yaw": -1.57, "description": "Haut table 5" }
+    }
+  ]
+}

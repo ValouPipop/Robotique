@@ -1,0 +1,62 @@
+<launch>
+  <!-- Censure globale des avertissements TF2 (TF_REPEATED_DATA) -->
+  <env name="ROSCONSOLE_CONFIG_FILE" value="$(dirname)/config/rosconsole.conf"/>
+
+  <!-- Arguments pour le modèle -->
+  <arg name="model" default="burger"/>
+  <arg name="move_forward_only" default="false"/>
+
+  <!-- Turtlebot3 Remote (publie les TFs internes du robot comme base_link -> laser etc.) -->
+  <include file="$(find turtlebot3_bringup)/launch/turtlebot3_remote.launch">
+    <arg name="model" value="$(arg model)"/>
+  </include>
+
+  <!-- 1. Lancement de GMAPPING (Plus robuste et mis à jour temporellement) -->
+  <node pkg="gmapping" type="slam_gmapping" name="turtlebot3_slam_gmapping" output="screen">
+    <param name="base_frame" value="base_footprint"/>
+    <param name="odom_frame" value="odom"/>
+    <param name="map_frame"  value="map"/>
+    <param name="map_update_interval" value="1.0"/>
+    <param name="maxUrange" value="3.5"/>
+    <param name="linearUpdate" value="0.2"/>
+    <param name="angularUpdate" value="0.2"/>
+    <!-- temporalUpdate force la mise à jour de la carte en restant sur place ! (casse le deadlock) -->
+    <param name="temporalUpdate" value="1.0"/> 
+  </node>
+
+  <!-- 2. Lancement de Move Base (Navigation) indispensable pour explore_lite -->
+  <include file="$(find turtlebot3_navigation)/launch/move_base.launch">
+    <arg name="model" value="$(arg model)" />
+    <arg name="move_forward_only" value="$(arg move_forward_only)"/>
+  </include>
+
+  <!-- BRIDAGE DE LA VITESSE DU ROBOT POUR ÉVITER LES GLISSEMENTS -->
+  <!-- On écrase les paramètres de vitesse par défaut de Move_Base (qui étaient beaucoup trop agressifs) -->
+  <param name="/move_base/DWAPlannerROS/max_vel_theta" value="1.0"/> <!-- Bridé pour éviter le ghosting (Avant 2.75) -->
+  <param name="/move_base/DWAPlannerROS/max_vel_x" value="0.15"/> <!-- Bridé pour scanner tranquillement (Avant 0.22) -->
+
+  <!-- 3. Lancement de Explore Lite pour l'exploration autonome -->
+  <node pkg="explore_lite" type="explore" respawn="false" name="explore" output="screen">
+    <!-- Le frame de base de ton robot -->
+    <param name="robot_base_frame" value="base_footprint"/>
+    
+    <!-- Topics pour observer la carte créée par gmapping -->
+    <param name="costmap_topic" value="map"/>
+    <param name="costmap_updates_topic" value="map_updates"/>
+    
+    <!-- Affichage des frontières -->
+    <param name="visualize" value="true"/>
+    
+    <!-- Paramètres OPTIMISÉS d'exploration -->
+    <param name="planner_frequency" value="0.33"/> <!-- Moins de calculs = moins de saccades (stuttering) = meilleure odométrie ! -->
+    <param name="progress_timeout" value="30.0"/>
+    
+    <!-- Poids de décision : On veut qu'il aille vers les ÉNORMES zones vides plutôt que le petit trou d'à côté -->
+    <param name="potential_scale" value="1.0"/> <!-- Poids de la distance (abaissé) -->
+    <param name="orientation_scale" value="0.0"/>
+    <param name="gain_scale" value="2.5"/> <!-- Poids de la TAILLE de la zone (très augmenté !) -->
+    
+    <param name="transform_tolerance" value="0.3"/>
+    <param name="min_frontier_size" value="0.4"/> <!-- Abaissé ! S'il était trop grand, il ignorait toutes les portes -->
+  </node>
+</launch>

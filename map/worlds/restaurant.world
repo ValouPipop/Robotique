@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="restaurant_world_fidel">
+    
+    <include><uri>model://sun</uri></include>
+    <include><uri>model://ground_plane</uri></include>
+
+    <model name="murs_restaurant">
+      <static>true</static>
+      
+      <link name="mur_haut"><pose>10 10 1.5 0 0 0</pose><collision name="c1"><geometry><box><size>20 0.2 3</size></box></geometry></collision><visual name="v1"><geometry><box><size>20 0.2 3</size></box></geometry><material><script><name>Gazebo/White</name></script></material></visual></link>
+      <link name="mur_bas"><pose>10 0 1.5 0 0 0</pose><collision name="c2"><geometry><box><size>20 0.2 3</size></box></geometry></collision><visual name="v2"><geometry><box><size>20 0.2 3</size></box></geometry><material><script><name>Gazebo/White</name></script></material></visual></link>
+      <link name="mur_gauche"><pose>0 5 1.5 0 0 0</pose><collision name="c3"><geometry><box><size>0.2 10 3</size></box></geometry></collision><visual name="v3"><geometry><box><size>0.2 10 3</size></box></geometry><material><script><name>Gazebo/White</name></script></material></visual></link>
+      <link name="mur_droit"><pose>20 5 1.5 0 0 0</pose><collision name="c4"><geometry><box><size>0.2 10 3</size></box></geometry></collision><visual name="v4"><geometry><box><size>0.2 10 3</size></box></geometry><material><script><name>Gazebo/White</name></script></material></visual></link>
+
+      <link name="mur_horiz_gauche"><pose>2 6 1.5 0 0 0</pose><collision name="c5"><geometry><box><size>4 0.2 3</size></box></geometry></collision><visual name="v5"><geometry><box><size>4 0.2 3</size></box></geometry><material><script><name>Gazebo/Grey</name></script></material></visual></link>
+      <link name="mur_horiz_milieu"><pose>10 6 1.5 0 0 0</pose><collision name="c6"><geometry><box><size>8 0.2 3</size></box></geometry></collision><visual name="v6"><geometry><box><size>8 0.2 3</size></box></geometry><material><script><name>Gazebo/Grey</name></script></material></visual></link>
+      <link name="comptoir"><pose>17 6 0.5 0 0 0</pose><collision name="c7"><geometry><box><size>6 0.5 1</size></box></geometry></collision><visual name="v7"><geometry><box><size>6 0.5 1</size></box></geometry><material><script><name>Gazebo/Wood</name></script></material></visual></link>
+
+      <link name="mur_vert_toilettes"><pose>4 8 1.5 0 0 0</pose><collision name="c8"><geometry><box><size>0.2 4 3</size></box></geometry></collision><visual name="v8"><geometry><box><size>0.2 4 3</size></box></geometry><material><script><name>Gazebo/Grey</name></script></material></visual></link>
+      <link name="mur_vert_sep_toilettes"><pose>2 8 1.5 0 0 0</pose><collision name="c9"><geometry><box><size>0.2 4 3</size></box></geometry></collision><visual name="v9"><geometry><box><size>0.2 4 3</size></box></geometry><material><script><name>Gazebo/Grey</name></script></material></visual></link>
+      <link name="mur_vert_cuisine"><pose>6 8.5 1.5 0 0 0</pose><collision name="c10"><geometry><box><size>0.2 3 3</size></box></geometry></collision><visual name="v10"><geometry><box><size>0.2 3 3</size></box></geometry><material><script><name>Gazebo/Grey</name></script></material></visual></link>
+
+      <link name="maze_1"><pose>8 7.5 1.5 0 0 0</pose><collision name="cm1"><geometry><box><size>0.2 3 3</size></box></geometry></collision><visual name="vm1"><geometry><box><size>0.2 3 3</size></box></geometry><material><script><name>Gazebo/DarkGrey</name></script></material></visual></link>
+      <link name="maze_2"><pose>10 8.5 1.5 0 0 0</pose><collision name="cm2"><geometry><box><size>0.2 3 3</size></box></geometry></collision><visual name="vm2"><geometry><box><size>0.2 3 3</size></box></geometry><material><script><name>Gazebo/DarkGrey</name></script></material></visual></link>
+      <link name="maze_3"><pose>12 7.5 1.5 0 0 0</pose><collision name="cm3"><geometry><box><size>0.2 3 3</size></box></geometry></collision><visual name="vm3"><geometry><box><size>0.2 3 3</size></box></geometry><material><script><name>Gazebo/DarkGrey</name></script></material></visual></link>
+      <link name="maze_4"><pose>14 8.5 1.5 0 0 0</pose><collision name="cm4"><geometry><box><size>0.2 3 3</size></box></geometry></collision><visual name="vm4"><geometry><box><size>0.2 3 3</size></box></geometry><material><script><name>Gazebo/DarkGrey</name></script></material></visual></link>
+      <link name="maze_5"><pose>16 7.5 1.5 0 0 0</pose><collision name="cm5"><geometry><box><size>0.2 3 3</size></box></geometry></collision><visual name="vm5"><geometry><box><size>0.2 3 3</size></box></geometry><material><script><name>Gazebo/DarkGrey</name></script></material></visual></link>
+      <link name="maze_6"><pose>18 8.5 1.5 0 0 0</pose><collision name="cm6"><geometry><box><size>0.2 3 3</size></box></geometry></collision><visual name="vm6"><geometry><box><size>0.2 3 3</size></box></geometry><material><script><name>Gazebo/DarkGrey</name></script></material></visual></link>
+
+    </model>
+
+    <include><name>table_salle_1</name><pose>3 3 0 0 0 0</pose><uri>model://cafe_table</uri></include>
+    <include><name>table_salle_2</name><pose>7 3 0 0 0 0</pose><uri>model://cafe_table</uri></include>
+    <include><name>table_salle_3</name><pose>11 3 0 0 0 0</pose><uri>model://cafe_table</uri></include>
+    <include><name>table_salle_4</name><pose>15 3 0 0 0 0</pose><uri>model://cafe_table</uri></include>
+    <include><name>table_salle_5</name><pose>18 3 0 0 0 0</pose><uri>model://cafe_table</uri></include>
+
+  </world>
+</sdf>
