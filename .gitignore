@@ -1,0 +1,11 @@
+# Environnements virtuels
+.venv/
+venv/
+env/
+ENV/
+
+# Objets compilés python
+__pycache__/
+*.py[cod]
+*$py.class
+

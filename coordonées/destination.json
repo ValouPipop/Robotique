@@ -10,29 +10,59 @@
   },
   "tables": [
     {
-      "id": "table_salle_1",
+      "id": "table_1",
       "type": "cafe_table",
-      "delivery_point": { "x": 3.0, "y": 4.0, "z": 0.0, "yaw": -1.57, "description": "Haut table 1" }
+      "delivery_point": {
+        "x": 3.0,
+        "y": 4.0,
+        "z": 0.0,
+        "yaw": -1.57,
+        "description": "Haut table 1"
+      }
     },
     {
-      "id": "table_salle_2",
+      "id": "table_2",
       "type": "cafe_table",
-      "delivery_point": { "x": 7.0, "y": 4.0, "z": 0.0, "yaw": -1.57, "description": "Haut table 2" }
+      "delivery_point": {
+        "x": 7.0,
+        "y": 4.0,
+        "z": 0.0,
+        "yaw": -1.57,
+        "description": "Haut table 2"
+      }
     },
     {
-      "id": "table_salle_3",
+      "id": "table_3",
       "type": "cafe_table",
-      "delivery_point": { "x": 11.0, "y": 4.0, "z": 0.0, "yaw": -1.57, "description": "Haut table 3" }
+      "delivery_point": {
+        "x": 11.0,
+        "y": 4.0,
+        "z": 0.0,
+        "yaw": -1.57,
+        "description": "Haut table 3"
+      }
     },
     {
-      "id": "table_salle_4",
+      "id": "table_4",
       "type": "cafe_table",
-      "delivery_point": { "x": 15.0, "y": 4.0, "z": 0.0, "yaw": -1.57, "description": "Haut table 4" }
+      "delivery_point": {
+        "x": 15.0,
+        "y": 4.0,
+        "z": 0.0,
+        "yaw": -1.57,
+        "description": "Haut table 4"
+      }
     },
     {
-      "id": "table_salle_5",
+      "id": "table_5",
       "type": "cafe_table",
-      "delivery_point": { "x": 18.0, "y": 4.0, "z": 0.0, "yaw": -1.57, "description": "Haut table 5" }
+      "delivery_point": {
+        "x": 18.0,
+        "y": 4.0,
+        "z": 0.0,
+        "yaw": -1.57,
+        "description": "Haut table 5"
+      }
     }
   ]
 }
