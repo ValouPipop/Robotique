@@ -1,0 +1,11 @@
+Premier temps on a recupere uen vue aerrien d'un restaurant, on a créer un .world pour créer la map sur gazebo (plus un fichier json avec les coordonées du point de depart, et des table/point d'arrivé)
+
+On a essayer de recupere la map avec SLAM  (explore lite, gmmapin) -> echec on a eu pas mal de probleme a cause du glissment du trutlebot 
+On a utiliser un script pour avoir la map SLAM avec tout les obstacles
+
+
+Implemenenter les script  de path (A star / Greddy / Dijkstra) dans l'environnement a partir de la map gazebo
+Implementation de DWA qui prend un alogo de path et publie sur cmd_vel pour faire avancer le robot dans l'environnemnt et le faire arrivé a son point d'arrivé
+
+IA utilisation d'un modele Actor Critic depuis la map, perment d'avoir des action continu donc le chemin optimal
+
