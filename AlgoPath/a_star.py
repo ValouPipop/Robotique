@@ -5,9 +5,7 @@ import heapq
 import json
 import yaml
 from PIL import Image
-
-
-
+from scipy.ndimage import binary_dilation # <-- Ajout pour épaissir les murs
 
 with open('../coordonées/destination.json','r', encoding='utf-8') as f:
     data = json.load(f)
@@ -32,15 +30,33 @@ with open('../map/map.yaml', 'r') as file:
 img = Image.open('../map/' + map_info["image"])
 grid_pixels = np.array(img)
 grille_brute = np.where(grid_pixels < 250, 1, 0) # 0 = Libre, 1 = Obstacle
+res = map_info["resolution"]
 
-# On TRANSPOSE la grille pour A* ! 
+# =====================================================================
+# --- INFLATION DES OBSTACLES (ÉPAISSISSEMENT DES MURS) ---
+# =====================================================================
+rayon_robot_m = 0.20 # Rayon du robot (20cm)
+marge_securite_m = 0.05 # Marge de sécurité (5cm)
+rayon_total_m = rayon_robot_m + marge_securite_m
+
+# Conversion du rayon en nombre de pixels
+rayon_pixels = int(np.ceil(rayon_total_m / res))
+
+# Création d'un masque circulaire pour l'épaississement
+y_g, x_g = np.ogrid[-rayon_pixels:rayon_pixels+1, -rayon_pixels:rayon_pixels+1]
+masque_circulaire = x_g**2 + y_g**2 <= rayon_pixels**2
+
+# Application de la dilatation sur la grille brute
+grille_epaisse = binary_dilation(grille_brute, structure=masque_circulaire).astype(int)
+# =====================================================================
+
+# On TRANSPOSE la grille ÉPAISSIE pour A* ! 
 # (Ainsi grid[x, y] est la colonne X et ligne Y de l'image)
-grid = grille_brute.T
+grid = grille_epaisse.T
 
 origin_x = map_info["origin"][0]
 origin_y = map_info["origin"][1]
-res = map_info["resolution"]
-hauteur_image = grille_brute.shape[0]
+hauteur_image = grille_epaisse.shape[0]
 
 def meters_to_grid(x_meters, y_meters):
     col_x = int(round((x_meters - origin_x) / res))
@@ -109,27 +125,29 @@ def a_star(grid,start,goal):
 
     return [], len(closedlist), 0
 
-# --- EXECUTION DE L'ALGO ---
-print(f"Lancement de A* de {start} vers {goal}...")
-start_time = time.time()
-path_result, num_nodes, cost = a_star(grid, start, goal)
-print(f"Terminé en {time.time() - start_time:.4f} secondes !")
-print(f"Coût : {cost} | Nœuds explorés : {num_nodes}")
+if __name__ == '__main__':
+    # --- EXECUTION DE L'ALGO ---
+    print(f"Lancement de A* de {start} vers {goal}...")
+    start_time = time.time()
+    path_result, num_nodes, cost = a_star(grid, start, goal)
+    print(f"Terminé en {time.time() - start_time:.4f} secondes !")
+    print(f"Coût : {cost} | Nœuds explorés : {num_nodes}")
 
-# --- AFFICHAGE DU CHEMIN ---
-plt.imshow(grille_brute, cmap='binary', origin='upper')
+    # --- AFFICHAGE DU CHEMIN ---
+    # Ici, on affiche grille_epaisse pour que tu puisses voir visuellement l'effet !
+    plt.imshow(grille_epaisse, cmap='binary', origin='upper')
 
-if path_result:
-    # Récupération de tous les X et Y pour le tracé
-    path_x = [p[0] for p in path_result]
-    path_y = [p[1] for p in path_result]
-    plt.plot(path_x, path_y, color='red', linewidth=2, label="Chemin A*")
-else:
-    print("⚠️ Aucun chemin trouvé !")
+    if path_result:
+        # Récupération de tous les X et Y pour le tracé
+        path_x = [p[0] for p in path_result]
+        path_y = [p[1] for p in path_result]
+        plt.plot(path_x, path_y, color='red', linewidth=2, label="Chemin A*")
+    else:
+        print("⚠️ Aucun chemin trouvé !")
 
-plt.scatter(start[0], start[1], color='green', marker='o', s=100, label="Départ", zorder=5)
-plt.scatter(goal[0], goal[1], color='blue', marker='x', s=100, label="Arrivée (Table 1)", zorder=5)
+    plt.scatter(start[0], start[1], color='green', marker='o', s=100, label="Départ", zorder=5)
+    plt.scatter(goal[0], goal[1], color='blue', marker='x', s=100, label="Arrivée (Table 1)", zorder=5)
 
-plt.title("Pathfinding A*")
-plt.legend()
-plt.show()
+    plt.title("Pathfinding A* avec Inflation des Obstacles")
+    plt.legend()
+    plt.show()

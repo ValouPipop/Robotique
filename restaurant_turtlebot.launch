@@ -6,7 +6,7 @@
   <arg name="yaw"   default="3.14159"/> 
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(env PWD)/map/restaurant.world"/>
+    <arg name="world_name" value="$(env PWD)/map/worlds/restaurant.world"/>
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="true"/>

@@ -5,6 +5,7 @@ import heapq
 import json
 import yaml
 from PIL import Image
+from scipy.ndimage import binary_dilation # <-- Ajout pour épaissir les murs
 
 # --- 1. CHARGEMENT DES DONNÉES DE DESTINATION ---
 with open('../coordonées/destination.json','r', encoding='utf-8') as f:
@@ -27,15 +28,33 @@ img = Image.open('../map/' + map_info["image"])
 grid_pixels = np.array(img)
 
 # Conversion en grille binaire : 0 = Libre, 1 = Obstacle
-# On considère souvent que < 250 (gris/noir) est un obstacle
 grille_brute = np.where(grid_pixels < 250, 1, 0) 
-grid = grille_brute.T  # Transpose pour avoir grid[x, y]
+res = map_info["resolution"]
+
+# =====================================================================
+# --- INFLATION DES OBSTACLES (ÉPAISSISSEMENT DES MURS) ---
+# =====================================================================
+rayon_robot_m = 0.20 # Rayon du robot (20cm)
+marge_securite_m = 0.05 # Marge de sécurité (5cm)
+rayon_total_m = rayon_robot_m + marge_securite_m
+
+# Conversion du rayon en nombre de pixels
+rayon_pixels = int(np.ceil(rayon_total_m / res))
+
+# Création d'un masque circulaire pour l'épaississement
+y_g, x_g = np.ogrid[-rayon_pixels:rayon_pixels+1, -rayon_pixels:rayon_pixels+1]
+masque_circulaire = x_g**2 + y_g**2 <= rayon_pixels**2
+
+# Application de la dilatation sur la grille brute
+grille_epaisse = binary_dilation(grille_brute, structure=masque_circulaire).astype(int)
+# =====================================================================
+
+grid = grille_epaisse.T  # Transpose la grille épaissie pour avoir grid[x, y]
 
 # Paramètres de transformation
 origin_x = map_info["origin"][0]
 origin_y = map_info["origin"][1]
-res = map_info["resolution"]
-hauteur_image = grille_brute.shape[0]
+hauteur_image = grille_epaisse.shape[0] # Utilise la hauteur de la grille épaissie
 
 def meters_to_grid(x_meters, y_meters):
     col_x = int(round((x_meters - origin_x) / res))
@@ -99,29 +118,31 @@ def dijkstra(grid, start, goal):
 
     return [], len(closedlist), 0
 
-# --- 4. EXÉCUTION ET AFFICHAGE ---
-print(f"Lancement de Dijkstra de {start} vers {goal}...")
-start_time = time.time()
-path_result, num_nodes, cost = dijkstra(grid, start, goal)
-execution_time = time.time() - start_time
+if __name__ == '__main__':
+    # --- 4. EXÉCUTION ET AFFICHAGE ---
+    print(f"Lancement de Dijkstra de {start} vers {goal}...")
+    start_time = time.time()
+    path_result, num_nodes, cost = dijkstra(grid, start, goal)
+    execution_time = time.time() - start_time
 
-print(f"Terminé en {execution_time:.4f} secondes !")
-print(f"Coût : {cost} | Nœuds explorés : {num_nodes}")
+    print(f"Terminé en {execution_time:.4f} secondes !")
+    print(f"Coût : {cost} | Nœuds explorés : {num_nodes}")
 
-# Affichage graphique
-plt.figure(figsize=(10, 10))
-plt.imshow(grille_brute, cmap='binary', origin='upper')
+    # Affichage graphique
+    plt.figure(figsize=(10, 10))
+    # On affiche la grille_epaisse pour voir les obstacles gonflés
+    plt.imshow(grille_epaisse, cmap='binary', origin='upper')
 
-if path_result:
-    path_x = [p[0] for p in path_result]
-    path_y = [p[1] for p in path_result]
-    plt.plot(path_x, path_y, color='blue', linewidth=2, label="Chemin Dijkstra")
-else:
-    print("⚠️ Aucun chemin trouvé !")
+    if path_result:
+        path_x = [p[0] for p in path_result]
+        path_y = [p[1] for p in path_result]
+        plt.plot(path_x, path_y, color='blue', linewidth=2, label="Chemin Dijkstra")
+    else:
+        print("⚠️ Aucun chemin trouvé !")
 
-plt.scatter(start[0], start[1], color='green', marker='o', s=100, label="Départ")
-plt.scatter(goal[0], goal[1], color='red', marker='x', s=100, label="Table 1")
+    plt.scatter(start[0], start[1], color='green', marker='o', s=100, label="Départ")
+    plt.scatter(goal[0], goal[1], color='red', marker='x', s=100, label="Table 1")
 
-plt.title(f"Pathfinding Dijkstra\nExplorés: {num_nodes} | Temps: {execution_time:.4f}s")
-plt.legend()
-plt.show()
+    plt.title(f"Pathfinding Dijkstra (Inflation)\nExplorés: {num_nodes} | Temps: {execution_time:.4f}s")
+    plt.legend()
+    plt.show()
