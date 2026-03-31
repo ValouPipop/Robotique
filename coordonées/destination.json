@@ -47,10 +47,10 @@
       "type": "cafe_table",
       "delivery_point": {
         "x": 15.0,
-        "y": 3.8,
+        "y": 2.0,
         "z": 0.0,
         "yaw": -1.57,
-        "description": "Haut table 4"
+        "description": "Bas table 4"
       }
     },
     {

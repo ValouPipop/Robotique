@@ -1,6 +1,10 @@
+Use case un restaurant ou le but est des servir les client grace a des robot au differentes tables (5 tables)
+
+
+
 Premier temps on a recupere uen vue aerrien d'un restaurant, on a créer un .world pour créer la map sur gazebo (plus un fichier json avec les coordonées du point de depart, et des table/point d'arrivé)
 
-On a essayer de recupere la map avec SLAM  (explore lite, gmmapin) -> echec on a eu pas mal de probleme a cause du glissment du trutlebot 
+On a essayer de recupere la map avec SLAM  (explore lite, gmmapin) /archives -> echec on a eu pas mal de probleme a cause du glissment du trutlebot 
 On a utiliser un script pour avoir la map SLAM avec tout les obstacles
 
 
@@ -9,3 +13,26 @@ Implementation de DWA qui prend un alogo de path et publie sur cmd_vel pour fair
 
 IA utilisation d'un modele Actor Critic depuis la map, perment d'avoir des action continu donc le chemin optimal
 
+--- Détails de l'Implémentation IA (PPO Actor-Critic) ---
+
+1. Modèle Utilisé :
+   - Algorithme : PPO (Proximal Policy Optimization) de la bibliothèque Stable Baselines3.
+   - Architecture : Actor-Critic avec politique continue (MLP).
+   - Plateforme : Entraînement sur CPU (plus stable sous WSL).
+
+2. Paramètres d'Entrée (Observation Space - 26 valeurs) :
+   - LiDAR (24 rayons) : Simule 360° de détection laser autour du robot pour éviter les obstacles (un rayon tous les 15°).
+   - Vraie Distance (1 valeur) : Distance réelle via le plus court chemin (Dijkstra) pour naviguer dans le labyrinthe, pas seulement la ligne droite.
+   - Cap (1 valeur) : Angle relatif vers la table cible (Heading).
+
+3. Système de Récompenses (Reward Structure) :
+   - Victoire (+2000.0) : Bonus majeur pour atteindre la table cible (< 0.35m).
+   - Crash (-500.0) : Pénalité en cas de collision avec un mur ou un obstacle.
+   - Progression (+150.0 * delta_distance) : Encourage le robot à réduire la vraie distance vers son but.
+   - Temps (-0.2 par step) : Pénalité temporelle pour forcer l'efficacité et éviter les boucles infinies.
+
+4. Environnement (Calculs et Simulation) :
+   - Simulation : FastRobot2DEnv (Gymnasium) basé sur la grille de pixels de la map SLAM/Gazebo.
+   - Calcul de distance : À chaque reset, l'environnement génère une "Distance Map" par propagation (BFS/Dijkstra) depuis le point d'arrivée pour connaître le chemin optimal instantanément.
+   - LiDAR : Algorithme de Raycasting sur la grille d'occupation (grille brutale dilatée de 20cm pour la sécurité du robot).
+   - Physique : Modèle cinématique discret (x, y, theta) avec un pas de temps (dt) de 0.1s.
