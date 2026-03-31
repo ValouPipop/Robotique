@@ -239,10 +239,10 @@ if __name__ == '__main__':
                 batch_size=128,
                 ent_coef=0.01,
                 target_kl=0.015,
-                device="cpu")
+                device="cuda")
     
     try:
-        model.learn(total_timesteps=1000000, callback=[eval_callback, checkpoint_callback])
+        model.learn(total_timesteps=2000000, callback=[eval_callback, checkpoint_callback])
     except KeyboardInterrupt:
         print("Entraînement interrompu par l'utilisateur.")
     

@@ -11,7 +11,7 @@ def test_model():
     env = FastRobot2DEnv()
     
     # 2. Charger le modèle entraîné
-    model_path = "best_model/best_model.zip"
+    model_path = "best_model.zip"
     print(f"Chargement du modèle : {model_path}")
     model = PPO.load(model_path, env=env)
 
