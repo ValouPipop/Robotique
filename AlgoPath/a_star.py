@@ -65,7 +65,7 @@ def meters_to_grid(x_meters, y_meters):
     return (col_x, row_y_image)
 
 start = meters_to_grid(x_start, y_start)
-goal = meters_to_grid(positions_tables["table_1_x"], positions_tables["table_1_y"])
+goal = meters_to_grid(positions_tables["table_4_x"], positions_tables["table_4_y"])
 
 
 def heuristic_manhattan(a,b):

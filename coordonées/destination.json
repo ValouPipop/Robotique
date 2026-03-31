@@ -47,7 +47,7 @@
       "type": "cafe_table",
       "delivery_point": {
         "x": 15.0,
-        "y": 4.0,
+        "y": 3.8,
         "z": 0.0,
         "yaw": -1.57,
         "description": "Haut table 4"

@@ -2,3 +2,5 @@ numpy
 Pillow
 PyYAML
 matplotlib
+gymnasium
+stable-baselines3

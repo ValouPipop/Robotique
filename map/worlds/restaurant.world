@@ -28,6 +28,23 @@
       <link name="maze_5"><pose>16 7.5 1.5 0 0 0</pose><collision name="cm5"><geometry><box><size>0.2 3 3</size></box></geometry></collision><visual name="vm5"><geometry><box><size>0.2 3 3</size></box></geometry><material><script><name>Gazebo/DarkGrey</name></script></material></visual></link>
       <link name="maze_6"><pose>18 8.5 1.5 0 0 0</pose><collision name="cm6"><geometry><box><size>0.2 3 3</size></box></geometry></collision><visual name="vm6"><geometry><box><size>0.2 3 3</size></box></geometry><material><script><name>Gazebo/DarkGrey</name></script></material></visual></link>
 
+      <link name="separateur_bois_1">
+        <pose>5 2 0.5 0 0 0</pose>
+        <collision name="c_sep1"><geometry><box><size>0.4 4 1</size></box></geometry></collision>
+        <visual name="v_sep1"><geometry><box><size>0.4 4 1</size></box></geometry><material><script><name>Gazebo/Wood</name></script></material></visual>
+      </link>
+
+      <link name="separateur_bois_2">
+        <pose>9 4 0.5 0 0 0</pose>
+        <collision name="c_sep2"><geometry><box><size>0.4 4 1</size></box></geometry></collision>
+        <visual name="v_sep2"><geometry><box><size>0.4 4 1</size></box></geometry><material><script><name>Gazebo/Wood</name></script></material></visual>
+      </link>
+
+      <link name="separateur_bois_3">
+        <pose>14.5 4.5 0.5 0 0 0</pose>
+        <collision name="c_sep3"><geometry><box><size>5 0.4 1</size></box></geometry></collision>
+        <visual name="v_sep3"><geometry><box><size>5 0.4 1</size></box></geometry><material><script><name>Gazebo/Wood</name></script></material></visual>
+      </link>
     </model>
 
     <include><name>table_salle_1</name><pose>3 3 0 0 0 0</pose><uri>model://cafe_table</uri></include>
