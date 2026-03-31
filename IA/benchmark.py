@@ -302,7 +302,7 @@ def run_benchmark():
         # --- IA (PPO) ---
         if IA_AVAILABLE:
             env = FastRobot2DEnv()
-            model = PPO.load("best_model/best_model.zip", env=env, device="cpu")
+            model = PPO.load("best_model.zip", env=env, device="cpu")
             
             # On fait N essais pour mesurer le taux de succès
             n_trials = 5
