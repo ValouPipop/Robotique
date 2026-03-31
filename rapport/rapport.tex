@@ -170,10 +170,36 @@ Fastest algorithm, but \textbf{not optimal} --- the path may be longer than the 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.85\textwidth]{images/path_comparison.png}
-  \caption{Comparison of all three path planning algorithms on the same start-goal pair.}
-  \label{fig:path_compare}
+  \includegraphics[width=\textwidth]{images/path_all_tables.png}
+  \caption{Path planning comparison for all 5 tables (A* in blue, Dijkstra in green, Greedy in orange).}
+  \label{fig:path_all_tables}
 \end{figure}
+
+\subsubsection{Per-Table Comparison}
+
+\begin{table}[H]
+\centering
+\small
+\rowcolors{2}{lightblue}{white}
+\caption{Path planning results for each table (path length in meters, explored nodes, computation time)}
+\begin{tabular}{l|rrr|rrr|rrr}
+\toprule
+ & \multicolumn{3}{c|}{\textbf{A*}} & \multicolumn{3}{c|}{\textbf{Dijkstra}} & \multicolumn{3}{c}{\textbf{Greedy}} \\
+\textbf{Table} & \textbf{m} & \textbf{nodes} & \textbf{ms} & \textbf{m} & \textbf{nodes} & \textbf{ms} & \textbf{m} & \textbf{nodes} & \textbf{ms} \\
+\midrule
+table\_1 & 36.6 & 10151 & 30 & 36.6 & 19887 & 45 & 36.6 & 4252 & 11 \\
+table\_2 & 35.2 & 12135 & 49 & 35.2 & 17234 & 44 & 35.2 & 4654 & 9 \\
+table\_3 & 43.9 & 19396 & 56 & 43.9 & 33614 & 77 & 44.6 & 10323 & 22 \\
+table\_4 & 45.9 & 16688 & 48 & 45.9 & 37564 & 86 & 47.3 & 11149 & 29 \\
+table\_5 & 50.9 & 19635 & 45 & 50.9 & 44719 & 96 & 52.8 & 12942 & 22 \\
+\midrule
+\textbf{Average} & \textbf{42.5} & \textbf{15601} & \textbf{46} & \textbf{42.5} & \textbf{30604} & \textbf{70} & \textbf{43.3} & \textbf{8664} & \textbf{18} \\
+\bottomrule
+\end{tabular}
+\label{tab:path_per_table}
+\end{table}
+
+Key observations: A* and Dijkstra always find the \textbf{same optimal path}, but Dijkstra explores $\sim$2$\times$ more nodes. Greedy is 2.5$\times$ faster but produces paths 1--4\% longer.
 
 \subsection{DWA Controller (Path Following)}
 

@@ -35,49 +35,52 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1}A* Algorithm}{4}{subsubsection.3.1.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.2}Dijkstra's Algorithm}{5}{subsubsection.3.1.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.3}Greedy Best-First Search}{5}{subsubsection.3.1.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Comparison of all three path planning algorithms on the same start-goal pair.\relax }}{5}{figure.caption.2}\protected@file@percent }
-\newlabel{fig:path_compare}{{2}{5}{Comparison of all three path planning algorithms on the same start-goal pair.\relax }{figure.caption.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Path planning comparison for all 5 tables (A* in blue, Dijkstra in green, Greedy in orange).\relax }}{5}{figure.caption.2}\protected@file@percent }
+\newlabel{fig:path_all_tables}{{2}{5}{Path planning comparison for all 5 tables (A* in blue, Dijkstra in green, Greedy in orange).\relax }{figure.caption.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.4}Per-Table Comparison}{5}{subsubsection.3.1.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Path planning results for each table (path length in meters, explored nodes, computation time)\relax }}{5}{table.caption.3}\protected@file@percent }
+\newlabel{tab:path_per_table}{{1}{5}{Path planning results for each table (path length in meters, explored nodes, computation time)\relax }{table.caption.3}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}DWA Controller (Path Following)}{5}{subsection.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Kinematic Model}{5}{subsubsection.3.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Dynamic Window}{5}{subsubsection.3.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Kinematic Model}{6}{subsubsection.3.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Dynamic Window}{6}{subsubsection.3.2.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3}Cost Function}{6}{subsubsection.3.2.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {4}Reinforcement Learning Navigation}{6}{section.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Why Actor-Critic?}{6}{subsection.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}PPO Architecture}{6}{subsection.4.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces PPO Actor-Critic architecture. The shared MLP processes the 26-value observation, then splits into an Actor (continuous actions) and a Critic (value estimation).\relax }}{6}{figure.caption.3}\protected@file@percent }
-\newlabel{fig:ppo_arch}{{3}{6}{PPO Actor-Critic architecture. The shared MLP processes the 26-value observation, then splits into an Actor (continuous actions) and a Critic (value estimation).\relax }{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}PPO Architecture}{7}{subsection.4.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces PPO Actor-Critic architecture. The shared MLP processes the 26-value observation, then splits into an Actor (continuous actions) and a Critic (value estimation).\relax }}{7}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:ppo_arch}{{3}{7}{PPO Actor-Critic architecture. The shared MLP processes the 26-value observation, then splits into an Actor (continuous actions) and a Critic (value estimation).\relax }{figure.caption.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Observation Space (26 values = the ``State'')}{7}{subsection.4.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Action Space (2 continuous values)}{7}{subsection.4.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Reward Function}{7}{subsection.4.5}\protected@file@percent }
 \newlabel{sec:reward}{{4.5}{7}{Reward Function}{subsection.4.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.6}PPO Loss Function}{8}{subsection.4.6}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.7}Training Hyperparameters}{8}{subsection.4.7}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces PPO Training Configuration\relax }}{8}{table.caption.4}\protected@file@percent }
-\newlabel{tab:hyperparams}{{1}{8}{PPO Training Configuration\relax }{table.caption.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.8}Training Results}{8}{subsection.4.8}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Training curve: mean evaluation reward over timesteps. The agent converges to stable positive rewards after $\sim $500k steps.\relax }}{8}{figure.caption.5}\protected@file@percent }
-\newlabel{fig:training_curve}{{4}{8}{Training curve: mean evaluation reward over timesteps. The agent converges to stable positive rewards after $\sim $500k steps.\relax }{figure.caption.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces PPO Training Configuration\relax }}{8}{table.caption.5}\protected@file@percent }
+\newlabel{tab:hyperparams}{{2}{8}{PPO Training Configuration\relax }{table.caption.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.8}Training Results}{9}{subsection.4.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Training curve: mean evaluation reward over timesteps. The agent converges to stable positive rewards after $\sim $500k steps.\relax }}{9}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:training_curve}{{4}{9}{Training curve: mean evaluation reward over timesteps. The agent converges to stable positive rewards after $\sim $500k steps.\relax }{figure.caption.6}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Comparative Analysis}{9}{section.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Benchmark Methodology}{9}{subsection.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Results}{9}{subsection.5.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Comprehensive benchmark: path efficiency, computation time, success rate, and computational cost.\relax }}{9}{figure.caption.6}\protected@file@percent }
-\newlabel{fig:benchmark}{{5}{9}{Comprehensive benchmark: path efficiency, computation time, success rate, and computational cost.\relax }{figure.caption.6}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Quantitative comparison (averaged over 5 tables)\relax }}{9}{table.caption.7}\protected@file@percent }
-\newlabel{tab:benchmark}{{2}{9}{Quantitative comparison (averaged over 5 tables)\relax }{table.caption.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Results}{10}{subsection.5.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Comprehensive benchmark: path efficiency, computation time, success rate, and computational cost.\relax }}{10}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:benchmark}{{5}{10}{Comprehensive benchmark: path efficiency, computation time, success rate, and computational cost.\relax }{figure.caption.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Quantitative comparison (averaged over 5 tables)\relax }}{10}{table.caption.8}\protected@file@percent }
+\newlabel{tab:benchmark}{{3}{10}{Quantitative comparison (averaged over 5 tables)\relax }{table.caption.8}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Analysis}{10}{subsection.5.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1}Path Efficiency}{10}{subsubsection.5.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.2}Success Rate}{10}{subsubsection.5.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.3}Obstacle Avoidance}{10}{subsubsection.5.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.4}Computation Time}{10}{subsubsection.5.3.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Resource Comparison}{10}{subsection.5.4}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Resource requirements\relax }}{10}{table.caption.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6}Discussion}{10}{section.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Summary}{10}{subsection.6.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Strengths and weaknesses\relax }}{10}{table.caption.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.2}Success Rate}{11}{subsubsection.5.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.3}Obstacle Avoidance}{11}{subsubsection.5.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.4}Computation Time}{11}{subsubsection.5.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Resource Comparison}{11}{subsection.5.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Resource requirements\relax }}{11}{table.caption.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Discussion}{11}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Summary}{11}{subsection.6.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Strengths and weaknesses\relax }}{11}{table.caption.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Potential Improvements}{11}{subsection.6.2}\protected@file@percent }
 \bibcite{ppo}{1}
 \bibcite{astar}{2}
 \bibcite{dwa}{3}
 \bibcite{sb3}{4}
 \bibcite{turtlebot}{5}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Potential Improvements}{11}{subsection.6.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{11}{section.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{12}{section.7}\protected@file@percent }

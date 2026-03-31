@@ -1,6 +1,8 @@
 numpy
+scipy
 Pillow
 PyYAML
 matplotlib
 gymnasium
 stable-baselines3
+torch

@@ -12,29 +12,30 @@
 \BOOKMARK [3][-]{subsubsection.3.1.1}{A* Algorithm}{subsection.3.1}% 12
 \BOOKMARK [3][-]{subsubsection.3.1.2}{Dijkstra's Algorithm}{subsection.3.1}% 13
 \BOOKMARK [3][-]{subsubsection.3.1.3}{Greedy Best-First Search}{subsection.3.1}% 14
-\BOOKMARK [2][-]{subsection.3.2}{DWA Controller \(Path Following\)}{section.3}% 15
-\BOOKMARK [3][-]{subsubsection.3.2.1}{Kinematic Model}{subsection.3.2}% 16
-\BOOKMARK [3][-]{subsubsection.3.2.2}{Dynamic Window}{subsection.3.2}% 17
-\BOOKMARK [3][-]{subsubsection.3.2.3}{Cost Function}{subsection.3.2}% 18
-\BOOKMARK [1][-]{section.4}{Reinforcement Learning Navigation}{}% 19
-\BOOKMARK [2][-]{subsection.4.1}{Why Actor-Critic?}{section.4}% 20
-\BOOKMARK [2][-]{subsection.4.2}{PPO Architecture}{section.4}% 21
-\BOOKMARK [2][-]{subsection.4.3}{Observation Space \(26 values = the ``State''\)}{section.4}% 22
-\BOOKMARK [2][-]{subsection.4.4}{Action Space \(2 continuous values\)}{section.4}% 23
-\BOOKMARK [2][-]{subsection.4.5}{Reward Function}{section.4}% 24
-\BOOKMARK [2][-]{subsection.4.6}{PPO Loss Function}{section.4}% 25
-\BOOKMARK [2][-]{subsection.4.7}{Training Hyperparameters}{section.4}% 26
-\BOOKMARK [2][-]{subsection.4.8}{Training Results}{section.4}% 27
-\BOOKMARK [1][-]{section.5}{Comparative Analysis}{}% 28
-\BOOKMARK [2][-]{subsection.5.1}{Benchmark Methodology}{section.5}% 29
-\BOOKMARK [2][-]{subsection.5.2}{Results}{section.5}% 30
-\BOOKMARK [2][-]{subsection.5.3}{Analysis}{section.5}% 31
-\BOOKMARK [3][-]{subsubsection.5.3.1}{Path Efficiency}{subsection.5.3}% 32
-\BOOKMARK [3][-]{subsubsection.5.3.2}{Success Rate}{subsection.5.3}% 33
-\BOOKMARK [3][-]{subsubsection.5.3.3}{Obstacle Avoidance}{subsection.5.3}% 34
-\BOOKMARK [3][-]{subsubsection.5.3.4}{Computation Time}{subsection.5.3}% 35
-\BOOKMARK [2][-]{subsection.5.4}{Resource Comparison}{section.5}% 36
-\BOOKMARK [1][-]{section.6}{Discussion}{}% 37
-\BOOKMARK [2][-]{subsection.6.1}{Summary}{section.6}% 38
-\BOOKMARK [2][-]{subsection.6.2}{Potential Improvements}{section.6}% 39
-\BOOKMARK [1][-]{section.7}{Conclusion}{}% 40
+\BOOKMARK [3][-]{subsubsection.3.1.4}{Per-Table Comparison}{subsection.3.1}% 15
+\BOOKMARK [2][-]{subsection.3.2}{DWA Controller \(Path Following\)}{section.3}% 16
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Kinematic Model}{subsection.3.2}% 17
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Dynamic Window}{subsection.3.2}% 18
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Cost Function}{subsection.3.2}% 19
+\BOOKMARK [1][-]{section.4}{Reinforcement Learning Navigation}{}% 20
+\BOOKMARK [2][-]{subsection.4.1}{Why Actor-Critic?}{section.4}% 21
+\BOOKMARK [2][-]{subsection.4.2}{PPO Architecture}{section.4}% 22
+\BOOKMARK [2][-]{subsection.4.3}{Observation Space \(26 values = the ``State''\)}{section.4}% 23
+\BOOKMARK [2][-]{subsection.4.4}{Action Space \(2 continuous values\)}{section.4}% 24
+\BOOKMARK [2][-]{subsection.4.5}{Reward Function}{section.4}% 25
+\BOOKMARK [2][-]{subsection.4.6}{PPO Loss Function}{section.4}% 26
+\BOOKMARK [2][-]{subsection.4.7}{Training Hyperparameters}{section.4}% 27
+\BOOKMARK [2][-]{subsection.4.8}{Training Results}{section.4}% 28
+\BOOKMARK [1][-]{section.5}{Comparative Analysis}{}% 29
+\BOOKMARK [2][-]{subsection.5.1}{Benchmark Methodology}{section.5}% 30
+\BOOKMARK [2][-]{subsection.5.2}{Results}{section.5}% 31
+\BOOKMARK [2][-]{subsection.5.3}{Analysis}{section.5}% 32
+\BOOKMARK [3][-]{subsubsection.5.3.1}{Path Efficiency}{subsection.5.3}% 33
+\BOOKMARK [3][-]{subsubsection.5.3.2}{Success Rate}{subsection.5.3}% 34
+\BOOKMARK [3][-]{subsubsection.5.3.3}{Obstacle Avoidance}{subsection.5.3}% 35
+\BOOKMARK [3][-]{subsubsection.5.3.4}{Computation Time}{subsection.5.3}% 36
+\BOOKMARK [2][-]{subsection.5.4}{Resource Comparison}{section.5}% 37
+\BOOKMARK [1][-]{section.6}{Discussion}{}% 38
+\BOOKMARK [2][-]{subsection.6.1}{Summary}{section.6}% 39
+\BOOKMARK [2][-]{subsection.6.2}{Potential Improvements}{section.6}% 40
+\BOOKMARK [1][-]{section.7}{Conclusion}{}% 41

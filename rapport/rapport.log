@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2026.3.31)  31 MAR 2026 21:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2026.3.31)  31 MAR 2026 21:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -892,58 +892,59 @@ LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-<images/map_tables.png, id=224, 722.7pt x 433.62pt>
+<images/map_tables.png, id=229, 722.7pt x 433.62pt>
 File: images/map_tables.png Graphic file (type png)
 <use images/map_tables.png>
 Package pdftex.def Info: images/map_tables.png  used on input line 124.
 (pdftex.def)             Requested size: 386.96027pt x 232.1796pt.
  [3] [4 <./images/map_tables.png>]
-<images/path_comparison.png, id=252, 722.7pt x 433.62pt>
-File: images/path_comparison.png Graphic file (type png)
-<use images/path_comparison.png>
-Package pdftex.def Info: images/path_comparison.png  used on input line 173.
-(pdftex.def)             Requested size: 386.96027pt x 232.1796pt.
- [5 <./images/path_comparison.png>]
-<images/ppo_architecture.png, id=264, 1004.553pt x 498.663pt>
+<images/path_all_tables.png, id=257, 1806.75pt x 361.35pt>
+File: images/path_all_tables.png Graphic file (type png)
+<use images/path_all_tables.png>
+Package pdftex.def Info: images/path_all_tables.png  used on input line 173.
+(pdftex.def)             Requested size: 455.24411pt x 91.04855pt.
+ [5 <./images/path_all_tables.png>]
+<images/ppo_architecture.png, id=267, 1004.553pt x 498.663pt>
 File: images/ppo_architecture.png Graphic file (type png)
 <use images/ppo_architecture.png>
-Package pdftex.def Info: images/ppo_architecture.png  used on input line 227.
+Package pdftex.def Info: images/ppo_architecture.png  used on input line 253.
 (pdftex.def)             Requested size: 386.96027pt x 192.08856pt.
- [6 <./images/ppo_architecture.png>] [7]
-<images/resultats_entrainement_final.png, id=285, 722.7pt x 361.35pt>
+ [6] [7 <./images/ppo_architecture.png>]
+<images/resultats_entrainement_final.png, id=287, 722.7pt x 361.35pt>
 File: images/resultats_entrainement_final.png Graphic file (type png)
 <use images/resultats_entrainement_final.png>
 Package pdftex.def Info: images/resultats_entrainement_final.png  used on input
- line 330.
+ line 356.
 (pdftex.def)             Requested size: 386.96027pt x 193.483pt.
- [8 <./images/resultats_entrainement_final.png>]
-<images/benchmark_comparaison.png, id=298, 1011.78pt x 722.7pt>
+ [8]
+<images/benchmark_comparaison.png, id=302, 1011.78pt x 722.7pt>
 File: images/benchmark_comparaison.png Graphic file (type png)
 <use images/benchmark_comparaison.png>
 Package pdftex.def Info: images/benchmark_comparaison.png  used on input line 3
-45.
+71.
 (pdftex.def)             Requested size: 455.24411pt x 325.17891pt.
- [9 <./images/benchmark_comparaison.png>] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 444--445
+ [9 <./images/resultats_entrainement_final.png>] [10 <./images/benchmark_compar
+aison.png>] [11]
+Underfull \hbox (badness 10000) in paragraph at lines 470--471
 []\T1/cmr/m/n/12 ROBOTIS. \T1/cmr/m/it/12 Turtle-Bot3 e-Manual\T1/cmr/m/n/12 . 
 [][]$\T1/cmtt/m/n/12 https : / / emanual . robotis . com / docs / en /
  []
 
-[11]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 447.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 447.
+[12]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 473.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 473.
  (./rapport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 447.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 447.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 473.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 473.
 Package rerunfilecheck Info: File `rapport.out' has not changed.
-(rerunfilecheck)             Checksum: EC0FE03FFF3CC18A5F37820D2F58FAD8;2709.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 447.
+(rerunfilecheck)             Checksum: DD1A07F66396ED0C768F0395CAD76F48;2789.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 473.
  ) 
 Here is how much of TeX's memory you used:
- 24362 strings out of 483183
- 463925 string characters out of 5966292
- 752668 words of memory out of 5000000
- 38845 multiletter control sequences out of 15000+600000
+ 24367 strings out of 483183
+ 464011 string characters out of 5966292
+ 754809 words of memory out of 5000000
+ 38847 multiletter control sequences out of 15000+600000
  552960 words of font info for 78 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  59i,12n,83p,926b,465s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -972,10 +973,10 @@ type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /symbols/msbm10.pfb>
-Output written on rapport.pdf (11 pages, 647154 bytes).
+Output written on rapport.pdf (12 pages, 678853 bytes).
 PDF statistics:
- 876 PDF objects out of 1000 (max. 8388607)
- 385 compressed objects within 4 object streams
- 84 named destinations out of 1000 (max. 500000)
- 358 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 916 PDF objects out of 1000 (max. 8388607)
+ 395 compressed objects within 4 object streams
+ 87 named destinations out of 1000 (max. 500000)
+ 366 words of extra memory for PDF output out of 10000 (max. 10000000)
 

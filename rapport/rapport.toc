@@ -13,29 +13,30 @@
 \contentsline {subsubsection}{\numberline {3.1.1}A* Algorithm}{4}{subsubsection.3.1.1}%
 \contentsline {subsubsection}{\numberline {3.1.2}Dijkstra's Algorithm}{5}{subsubsection.3.1.2}%
 \contentsline {subsubsection}{\numberline {3.1.3}Greedy Best-First Search}{5}{subsubsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.4}Per-Table Comparison}{5}{subsubsection.3.1.4}%
 \contentsline {subsection}{\numberline {3.2}DWA Controller (Path Following)}{5}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Kinematic Model}{5}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Dynamic Window}{5}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Kinematic Model}{6}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Dynamic Window}{6}{subsubsection.3.2.2}%
 \contentsline {subsubsection}{\numberline {3.2.3}Cost Function}{6}{subsubsection.3.2.3}%
 \contentsline {section}{\numberline {4}Reinforcement Learning Navigation}{6}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Why Actor-Critic?}{6}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}PPO Architecture}{6}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.2}PPO Architecture}{7}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Observation Space (26 values = the ``State'')}{7}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Action Space (2 continuous values)}{7}{subsection.4.4}%
 \contentsline {subsection}{\numberline {4.5}Reward Function}{7}{subsection.4.5}%
 \contentsline {subsection}{\numberline {4.6}PPO Loss Function}{8}{subsection.4.6}%
 \contentsline {subsection}{\numberline {4.7}Training Hyperparameters}{8}{subsection.4.7}%
-\contentsline {subsection}{\numberline {4.8}Training Results}{8}{subsection.4.8}%
+\contentsline {subsection}{\numberline {4.8}Training Results}{9}{subsection.4.8}%
 \contentsline {section}{\numberline {5}Comparative Analysis}{9}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Benchmark Methodology}{9}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Results}{9}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.2}Results}{10}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Analysis}{10}{subsection.5.3}%
 \contentsline {subsubsection}{\numberline {5.3.1}Path Efficiency}{10}{subsubsection.5.3.1}%
-\contentsline {subsubsection}{\numberline {5.3.2}Success Rate}{10}{subsubsection.5.3.2}%
-\contentsline {subsubsection}{\numberline {5.3.3}Obstacle Avoidance}{10}{subsubsection.5.3.3}%
-\contentsline {subsubsection}{\numberline {5.3.4}Computation Time}{10}{subsubsection.5.3.4}%
-\contentsline {subsection}{\numberline {5.4}Resource Comparison}{10}{subsection.5.4}%
-\contentsline {section}{\numberline {6}Discussion}{10}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Summary}{10}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}Success Rate}{11}{subsubsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.3}Obstacle Avoidance}{11}{subsubsection.5.3.3}%
+\contentsline {subsubsection}{\numberline {5.3.4}Computation Time}{11}{subsubsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.4}Resource Comparison}{11}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Discussion}{11}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Summary}{11}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}Potential Improvements}{11}{subsection.6.2}%
-\contentsline {section}{\numberline {7}Conclusion}{11}{section.7}%
+\contentsline {section}{\numberline {7}Conclusion}{12}{section.7}%
