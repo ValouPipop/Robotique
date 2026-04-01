@@ -454,10 +454,8 @@ Setup effort & Simple algorithm choice & Training + reward engineering \\
 
 \subsection{Potential Improvements}
 \begin{itemize}
-  \item \textbf{Curriculum learning}: Start with nearby goals, progressively increase difficulty
-  \item \textbf{Safety layer}: Override RL actions when obstacle distance $< 15$ cm
-  \item \textbf{Hybrid approach}: Use A* for global path + RL for local control (smooth following)
-  \item \textbf{Domain randomization}: Add noise during training to improve sim-to-real transfer
+  \item \textbf{Hybrid approach}: Use A* for global path planning combined with RL for local control, achieving both guaranteed safety (via inflation margins) and smooth, natural robot motion (via continuous actions).
+  \item \textbf{Multi-stop route planning}: Currently, the robot navigates from the kitchen to a single table and back. A major improvement would be to plan a complete delivery route serving multiple tables in one trip, e.g.\ \textit{Kitchen $\rightarrow$ Table~2 $\rightarrow$ Table~5 $\rightarrow$ Table~3 $\rightarrow$ Kitchen}. This would require solving a variant of the Travelling Salesman Problem (TSP) to optimize the visit order and minimize total travel distance.
 \end{itemize}
 
 % =====================================================================
